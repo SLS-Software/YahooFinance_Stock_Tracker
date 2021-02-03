@@ -1,7 +1,11 @@
 import requests
 from bs4 import BeautifulSoup
 
-URL = 'https://finance.yahoo.com/quote/TSLA?p=TSLA&.tsrc=fin-srch'
+print("Please input a ticker you would like to search")
+
+Ticker = input()
+
+URL = 'https://finance.yahoo.com/quote/' + Ticker + '?'
 page = requests.get(URL)
 
 soup = BeautifulSoup(page.content, 'html.parser')
