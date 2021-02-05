@@ -1,7 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 
-print("Please input a ticker you would like to search")
+print("\nPlease input a ticker you would like to search\n")
 
 Ticker = input()
 
@@ -14,4 +14,4 @@ results = soup.find(id="quote-header-info")
 stockprice = results.find_all('div', class_='D(ib) Mend(20px)')
 
 for stockprice in stockprice:
-    print(stockprice.text, end='\n'*2)
+    print('\n',stockprice.text, end='\n'*2)
